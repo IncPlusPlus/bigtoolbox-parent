@@ -68,7 +68,6 @@
                 </executions>
             </plugin>
             <plugin>
-                <inherited>false</inherited>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.1.0</version>
@@ -83,7 +82,7 @@
                             <outputDirectory>${project.build.directory}</outputDirectory>
                             <resources>
                                 <resource>
-                                    <directory>${settings.localRepository}/io/github/incplusplus/bigtoolbox-parent/${project.version}</directory>
+                                    <directory>${settings.localRepository}/io/github/incplusplus/${project.artifactId}/${project.version}</directory>
                                     <includes>
                                         <include>*.pom</include>
                                     </includes>
