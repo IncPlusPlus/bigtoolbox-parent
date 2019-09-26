@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.incplusplus</groupId>
     <artifactId>bigtoolbox-parent</artifactId>
-    <version>1.0.98</version>
+    <version>1.0.99</version>
     <packaging>pom</packaging>
     <name>Big Tool Box</name>
     <description>The parent POM for bigtoolbox. If you want all of the modules from bigtoolbox,
@@ -108,6 +108,23 @@
                         <phase>package</phase>
                         <goals>
                             <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.0</version>
+                <!-- workaround for https://bugs.openjdk.java.net/browse/JDK-8212233 -->
+                <!--                <configuration>-->
+                <!--                    <source>8</source>-->
+                <!--                </configuration>-->
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
                         </goals>
                     </execution>
                 </executions>
