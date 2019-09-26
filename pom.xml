@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.incplusplus</groupId>
     <artifactId>bigtoolbox-parent</artifactId>
-    <version>1.0.99</version>
+    <version>1.0.100</version>
     <packaging>pom</packaging>
     <name>Big Tool Box</name>
     <description>The parent POM for bigtoolbox. If you want all of the modules from bigtoolbox,
@@ -126,6 +126,19 @@
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                    </execution>
+                    <execution>
+                        <id>resource-bundles</id>
+                        <phase>package</phase>
+                        <goals>
+                            <!-- produce source artifact for main project sources -->
+                            <goal>resource-bundle</goal>
+                            <!-- produce source artifact for project test sources -->
+<!--                            <goal>test-resource-bundle</goal>-->
+                        </goals>
+                        <configuration>
+                            <detectOfflineLinks>false</detectOfflineLinks>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
