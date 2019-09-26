@@ -8,7 +8,7 @@ env:
 addons:
   apt:
     packages:
-      -tree
+      - tree
 before_deploy:
   - tree
 deploy:
