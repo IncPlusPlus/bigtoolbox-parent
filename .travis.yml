@@ -5,6 +5,12 @@ cache:
     - $HOME/.m2/repository
 env:
   - CLI_VERSION=latest
+addons:
+  apt:
+    packages:
+      -tree
+before_deploy:
+  - tree
 deploy:
   - provider: bintray
     file: bintray_info_maven.JSON
