@@ -5,21 +5,19 @@
     "subject": "incplusplus",
     "desc": "Created automatically via push",
     "issue_tracker_url": "https://github.com/IncPlusPlus/bigtoolbox-parent/issues",
-    "vcs_url": "https://github.com/IncPlusPlus/bigtoolbox.git",
+    "vcs_url": "https://github.com/IncPlusPlus/bigtoolbox-parent.git",
     "licenses": ["Apache-2.0"],
     "public_download_numbers": false,
     "public_stats": false
   },
 
   "version": {
-    "name": "1.0.95"
+    "name": "1.0.102"
   },
 
   "files":
   [
-    {"includePattern": "target\/((\\w+)-(\\d+).(\\d+).(\\d+).jar)", "excludePattern": ".*/do-not-deploy/.*", "uploadPattern": "io/github/incplusplus/bigtoolbox-parent/$3.$4.$5/$2-$3.$4.$5.jar"},
-    {"includePattern": "target\/((\\w+)-(\\d+).(\\d+).(\\d+).pom)", "excludePattern": ".*/do-not-deploy/.*", "uploadPattern": "io/github/incplusplus/bigtoolbox-parent/$3.$4.$5/$2-$3.$4.$5.pom"},
-    {"includePattern": "target\/((\\w+)-(\\d+).(\\d+).(\\d+)(-(\\w+)){1}.jar)", "excludePattern": ".*/do-not-deploy/.*", "uploadPattern": "io/github/incplusplus/bigtoolbox-parent/$3.$4.$5/$2-$3.$4.$5$6.jar"}
+    {"includePattern": "target\/((\\w+-\\w+)-(\\d+.\\d+.\\d+).pom)", "excludePattern": ".*/do-not-deploy/.*", "uploadPattern": "io/github/incplusplus/bigtoolbox-parent/$3/$2-$3.pom"}
   ],
   "publish": true
 }
