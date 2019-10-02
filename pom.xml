@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.incplusplus</groupId>
   <artifactId>bigtoolbox-parent</artifactId>
-  <version>1.0.103</version>
+  <version>1.0.106</version>
   <packaging>pom</packaging>
   <name>Big Tool Box Parent POM</name>
   <description>The parent POM for bigtoolbox. If you want all of the modules from bigtoolbox,
@@ -167,6 +167,63 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.8</version>
+        <executions>
+          <execution>
+            <phase>post-integration-test</phase>
+            <configuration>
+              <target>
+<!--                https://stackoverflow.com/a/4802098/1687436-->
+                <taskdef resource="net/sf/antcontrib/antlib.xml"
+                         classpathref="maven.plugin.classpath" />
+                <if>
+                  <equals arg1="${project.packaging}" arg2="jar" />
+                  <then>
+                    <if>
+                      <available file="${project.build.directory}/site/jacoco/jacoco.xml"/>
+                      <then>
+                        <copy file="${project.build.directory}/site/jacoco/jacoco.xml" tofile="${project.build.directory}/jacoco_fixed_for_codeclimate.xml"/>
+                        <replace file="${project.build.directory}/jacoco_fixed_for_codeclimate.xml" token="io/github/" value="${project.build.sourceDirectory}/io/github/"/>
+                      </then>
+                      <else>
+                        <echo message="Skipped copy+replace as '${project.build.directory}/site/jacoco/jacoco.xml' isn't present"/>
+                      </else>
+                    </if>
+                  </then>
+                  <else>
+                    <echo message="Skipping antrun. Project is not in 'jar' packaging but instead is type '${project.packaging}'" />
+                  </else>
+                </if>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+<!--        https://stackoverflow.com/a/4802098/1687436-->
+        <dependencies>
+          <dependency>
+            <groupId>ant-contrib</groupId>
+            <artifactId>ant-contrib</artifactId>
+            <version>1.0b3</version>
+            <exclusions>
+              <exclusion>
+                <groupId>ant</groupId>
+                <artifactId>ant</artifactId>
+              </exclusion>
+            </exclusions>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-nodeps</artifactId>
+            <version>1.8.1</version>
+          </dependency>
+        </dependencies>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
