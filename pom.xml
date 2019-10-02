@@ -185,6 +185,40 @@
   </build>
   <url>https://github.com/IncPlusPlus/bigtoolbox-parent</url>
 
+  <profiles>
+    <profile>
+      <id>do-antrun-codeclimate-bs</id>
+      <activation>
+        <file>
+          <exists>/target/site/jacoco/jacoco.xml</exists>
+        </file>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>1.8</version>
+            <executions>
+              <execution>
+                <phase>post-integration-test</phase>
+                <configuration>
+                  <target>
+                    <copy file="./target/site/jacoco/jacoco.xml" tofile="./target/jacoco_fixed_for_codeclimate.xml"/>
+                    <replace file="target/jacoco_fixed_for_codeclimate.xml" token="io/github/" value="src/main/java/io/github/"/>
+                  </target>
+                </configuration>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
