@@ -27,7 +27,8 @@ deploy:
     file_glob: true
     file: target/bigtoolbox-parent-*.*.*.pom
     skip_cleanup: true
-    draft: true
+    prerelease: true
     on:
       repo: IncPlusPlus/bigtoolbox-parent
       branch: master
+      tags: true
