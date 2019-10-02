@@ -190,7 +190,7 @@
       <id>do-antrun-codeclimate-bs</id>
       <activation>
         <file>
-          <exists>/target/site/jacoco/jacoco.xml</exists>
+          <exists>./target/site/jacoco/jacoco.xml</exists>
         </file>
       </activation>
       <build>
