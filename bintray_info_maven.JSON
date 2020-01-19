@@ -12,12 +12,12 @@
   },
 
   "version": {
-    "name": "1.0.106"
+    "name": "1.0.107"
   },
 
   "files":
   [
-    {"includePattern": "target\/((\\w+-\\w+)-(\\d+.\\d+.\\d+).pom)", "excludePattern": ".*/do-not-deploy/.*", "uploadPattern": "io/github/incplusplus/bigtoolbox-parent/$3/$2-$3.pom"}
+    {"includePattern": "target\/((\\w+-\\w+)-(\\d+.\\d+.\\d+).pom)", "excludePattern": ".*/do-not-deploy/.*", "uploadPattern": "io/github/incplusplus/$2/$3/$1"}
   ],
   "publish": true
 }
