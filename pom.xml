@@ -214,7 +214,7 @@
                         <replace file="${project.build.directory}/jacoco_fixed_for_codeclimate.xml" token="io/github/" value="${project.build.sourceDirectory}/io/github/"/>
                       </then>
                       <else>
-                        <echo message="Skipped copy+replace as '${project.build.directory}/site/jacoco/jacoco.xml' isn't present"/>
+                        <echo message="Skipped copy+replace as '${project.build.directory}/site/jacoco/jacoco.xml' isn't present."/>
                       </else>
                     </if>
                   </then>
