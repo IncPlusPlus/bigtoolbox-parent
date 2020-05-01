@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.incplusplus</groupId>
   <artifactId>bigtoolbox-parent</artifactId>
-  <version>1.0.107</version>
+  <version>1.1.0</version>
   <packaging>pom</packaging>
   <name>Big Tool Box Parent POM</name>
   <description>The parent POM for bigtoolbox. If you want all of the modules from bigtoolbox,
@@ -11,7 +11,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>11</java.version>
+    <java.version>14</java.version>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <bintray.repo>incplusplus/main-maven</bintray.repo>
