@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>io.github.incplusplus</groupId>
   <artifactId>bigtoolbox-parent</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
   <packaging>pom</packaging>
   <name>Big Tool Box Parent POM</name>
   <description>The parent POM for bigtoolbox. If you want all of the modules from bigtoolbox,
-        use "bigtoolbox" instead of "bigtoolbox-parent</description>
+        use "bigtoolbox" instead of "bigtoolbox-parent"</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -258,6 +258,18 @@
             <id>attach-sources</id>
             <goals>
               <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.coveo</groupId>
+        <artifactId>fmt-maven-plugin</artifactId>
+        <version>2.9</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
             </goals>
           </execution>
         </executions>
