@@ -7,7 +7,7 @@
   <packaging>pom</packaging>
   <name>Big Tool Box Parent POM</name>
   <description>The parent POM for bigtoolbox. If you want all of the modules from bigtoolbox,
-        use "bigtoolbox" instead of "bigtoolbox-parent</description>
+        use "bigtoolbox" instead of "bigtoolbox-parent"</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
